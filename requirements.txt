@@ -1,0 +1,5 @@
+pandas
+python-docx
+pdfminer.six
+langchain
+streamlit
