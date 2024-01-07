@@ -231,6 +231,7 @@ def streamlit_get_scores(file_paths, job_description):
 
     for path, text in result:
         resume_detail = analyze_resume(text, job_description)
+        print(f"Resume Detail for {path}: {resume_detail}") # print details for debugging
         try:
             detail_dict = json.loads(resume_detail)
             score = detail_dict.get('score', None)
