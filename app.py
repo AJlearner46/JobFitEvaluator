@@ -231,12 +231,12 @@ def streamlit_get_scores(file_paths, job_description):
 
     for path, text in result:
         resume_detail = analyze_resume(text, job_description)
-        print(f"Resume Detail for {path}: {resume_detail}") # print details for debugging
+        st.write(f"Resume Detail for {path}: {resume_detail}") # print details for debugging
         try:
             detail_dict = json.loads(resume_detail)
             score = detail_dict.get('score', None)
         except json.JSONDecodeError:
-            print("Error decoding the JSON from the resume analysis.")
+            at.write("Error decoding the JSON from the resume analysis.")
             score = None
         scores.append((path, score))
 
